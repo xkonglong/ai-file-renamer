@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+release/
+
+# 废弃/含密钥的死代码（公开仓库务必排除）
+废弃/
+
+# 内部设计过程文件
+.creative-design/
+
+# 图标源图（保留 icon.ico，仅排除大尺寸源图）
+build/icon-src.png
+
+# Logs & temp
+*.log
+npm-debug.log*
+*.tsbuildinfo
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

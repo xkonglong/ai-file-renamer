@@ -1,0 +1,58 @@
+appId: com.meoo.ai-file-renamer
+productName: 小恐龙AI智能文件更名
+copyright: Copyright © 2025
+
+# 打包输出目录
+directories:
+  output: release
+  buildResources: build
+
+# 需要打包的文件
+files:
+  - electron/**/*
+  - dist/**/*
+  - package.json
+  - node_modules/**/*
+
+# 排除的文件
+asar: true
+asarUnpack:
+  - "**/node_modules/sharp/**/*"
+
+# Windows 打包配置（绿色软件：解压即用）
+win:
+  target:
+    - target: dir
+      arch: x64
+    - target: zip
+      arch: x64
+  icon: build/icon.ico
+  publisherName: 小恐龙AI
+  # 绿色软件无需签名
+  verifyUpdateCodeSignature: false
+  signingHashAlgorithms: []
+  # 允许修改可执行文件以嵌入自定义图标（需要 electron-builder 下载 winCodeSign/rcedit 工具）
+  signAndEditExecutable: true
+
+# macOS 配置（如需跨平台）
+mac:
+  target:
+    - target: dmg
+      arch: x64
+    - target: zip
+      arch: x64
+  icon: build/icon.icns
+  category: public.app-category.utilities
+
+# Linux 配置（如需跨平台）
+linux:
+  target:
+    - AppImage
+    - zip
+  icon: build/icon.png
+  category: Utility
+
+# 发布配置（可选）
+# publish:
+#   provider: generic
+#   url: https://example.com/updates
